@@ -1,0 +1,50 @@
+jqeury
+
+jqeury('#jqeury, #MYSQL').addClass('selected')
+선택된 id를 가지고 있는 엘리먼트에 class selected 를 추가한다
+
+#list li:eq(2) 인자와 인덱스가 동일한 엘리먼트를 찾아내는 선택자
+#list li:gt(1) 인자 보다 인덱스가 큰 엘리먼트를 찾아내는 선택자
+#list li:lt(2) 인자 보다 인덱스가 작은 엘리먼트를 찾아내는 선택자
+#list li:even 홀 수의 인덱스 값을 가진 엘리먼트에 대한 선택자
+#list li:odd 짝 수의 인덱스 값을 가진 가진 엘리먼트에 대한 선택자
+#list li:first 첫번째 인덱스 엘리먼트에 대한 선택자
+#list li:last 마지막 인덱스 엘리먼트에 대한 선택자
+
+jQuery('#tutorial').attr('href', 'http://jquery.org').attr('target','_blank').css('color','red')
+
+투토리얼을 아이디 값으로 가지고 있는 
+속성 href 를 바꾼다
+속성 target 을 바꾼다
+
+$('ul.first').find('.foo').css('background-color','red').end().find('.foo').css('background-color','green')
+
+Event, - 크로스브라우징의 문제를 해결해줌
+
+Bind 
+function clickHandler(e){
+  alert('thank you')
+}
+
+$(document).bind('read', function(){
+  $('#click_me').bind('click',clickHandler);
+  $('#remove_event).bind('click', function(e){
+    $('#click_me').unbind('click', clickHandler)
+  })
+  $('#trigger_event').bind('click', function(e){
+    $('#click_me').trigger('click')
+  })
+})
+
+Helper
+위와 결과는 동일함
+$(document).ready(function(){
+  $('#click_me').click(clickHandler)
+  
+})
+
+Live
+라이브를 이용하면 존재하지 않는 엘리먼트에 대해서 이벤트를 설치할 수 있다. 
+$('#click_me').live('click', clickHandler)
+
+변경
