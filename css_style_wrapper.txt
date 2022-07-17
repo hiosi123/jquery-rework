@@ -48,3 +48,20 @@ Live
 $('#click_me').live('click', clickHandler)
 
 변경
+append 자식 
+after 형제
+wrap 부모
+remove
+detach
+empty
+
+치환
+replaceAll() 제어 하고자 하는 인자를 선택하고, 타켓을 변경한다
+$()
+class 제어
+toggleClass()
+
+Document Object Model
+
+BOM
+Browser Object Model
