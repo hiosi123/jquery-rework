@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드 다루기- eq()</title>
+    <style>
+      div{
+        width: 50px;
+        height: 50px;
+        float: left;
+        background-color: brown;
+        margin: 10px;
+      }
+
+    </style>  
+    <!-- 자바스크립트로 아이디가 header인 노드를 찾아서 변경하기 -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        //div가 5개 생성되고 div 객체들을 배열로 저장하고 있다
+        var $divList = $('div')
+        //배열은 0부터 시작을 하니 index가 1이라면 2번쨰의 div만 가져오고 있다.
+
+        var $div_two = $divList.eq(1)
+        var $div_one = $divList.get(0)
+        var $div_five = $divList[4]
+
+        $div_one.style.border = '3px dashed blue'
+        $div_two.css('background', 'blue')
+        $div_five.style.background = 'yellow'
+        })
+    </script>
+  </head>
+<body>
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <div>div4</div>
+  <div>div5</div>
+  <div>div6</div>
+</body>
+</html>
