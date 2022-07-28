@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이디로 노드 찾기, 태그 이름으로 노드 찾기, class 이름으로 노드 찾기</title>
+    <title>노드 다루기- 특정노드를 찾아서 인덱스값을 출력하기(index)</title>
     <style>
       body{
         font-size:15px;
@@ -25,17 +25,9 @@
     <script>
 
       $(document).ready(function() {
-        // $("ul.menu li").each((index)=> {
-        // //this는 현재 jQuery의 객체를 의미한다. 여기서는 htmlliElement를 출력하고 있다.
-        //   document.write(this + "<br/>")
-        //   console.log($(this))
-        // })
-
-        let $liList = $('ul.menu li')
-        $liList.each(function(index){
-          let borderPixel = (index+1) *2;
-          // $liList.eq(index).css('border', borderPixel + 'px solid #f00')
-          $(this).css('border', borderPixel + 'px solid #f00')
+        $('ul.menu li').click(function(){
+          //클릭한 객체가 몇 번째 인덱스 인지 값을 출력하는 코드이다.
+          alert($(this).index());
         })
       })
     </script>
