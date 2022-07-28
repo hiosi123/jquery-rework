@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이디로 노드 찾기, 태그 이름으로 노드 찾기, class 이름으로 노드 찾기</title>
+    <title>노드 다루기- 특정 노드만 찾기(filter())</title>
     <style>
       body{
         font-size:15px;
@@ -25,18 +25,16 @@
     <script>
 
       $(document).ready(function() {
-        // $("ul.menu li").each((index)=> {
-        // //this는 현재 jQuery의 객체를 의미한다. 여기서는 htmlliElement를 출력하고 있다.
-        //   document.write(this + "<br/>")
-        //   console.log($(this))
-        // })
+        // let $liList = $('ul.menu li');
+        //$liList 배열값 중에서 class 선택자 값이 .select 인것만 찾아오는 코드
+        // $liList.filter('.select').css('background', 'yellow')
 
-        let $liList = $('ul.menu li')
-        $liList.each(function(index){
-          let borderPixel = (index+1) *2;
-          // $liList.eq(index).css('border', borderPixel + 'px solid #f00')
-          $(this).css('border', borderPixel + 'px solid #f00')
-        })
+        //find()는 특정 노드를 찾는데 자식 요소아래에서만 찾을 때 사용
+        let $content = $('#content');
+        $content.find('.test1').css('background', 'red')
+
+        //find() 전체(혹은 기준값 하위)에서만 검색을 하지만,
+        //filter는 자기 자신의 레밸에서 검색을 한다.
       })
     </script>
   </head>
