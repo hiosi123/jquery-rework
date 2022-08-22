@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>노드 생성-jquey 이용</title>
+    <title>노드생성 jquery로 마지막 번째로 노드 이동하기 (append(), appendTo())</title>
     <style>
       body {
         font-size: 15px;
@@ -24,20 +24,22 @@
     
     <script src="libs/jquery-3.5.1.min.js"></script>
     <script>
-      $(document).ready(() => {
-        let cnt = 7;
+      $(document).ready(function(){
+        let cnt = 8;
 
         
         $("#btnAdd").click(() => {
           cnt++
-          let $li = document.createElement('li')
-          let liText = document.createTextNode('메뉴' + cnt)
-          let menu = document.querySelector('#menu')
-          $li.appendChild(liText)
-          console.log($li)
+          //새로운 jQuery 객체를 생성 
+          // $item = $(`<li>새메뉴 ${cnt}</li>`)
 
-          menu.appendChild($li)
-          // document.write($li.get(0))
+          // $("#menu").append($item)
+          // $item.appendTo('#menu')
+        })
+        var $menu = $('#menu')
+        $("#menu li").click(function(){
+          $menu.append(this)
+
         })
       })
     </script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>노드 생성-jquey 이용</title>
+    <title>노드생성 jquery로 노드 이동하기 (insertBefore, before, insertAfter, after))</title>
     <style>
       body {
         font-size: 15px;
@@ -30,14 +30,13 @@
         
         $("#btnAdd").click(() => {
           cnt++
-          let $li = document.createElement('li')
-          let liText = document.createTextNode('메뉴' + cnt)
-          let menu = document.querySelector('#menu')
-          $li.appendChild(liText)
-          console.log($li)
+          //새로운 jQuery 객체를 생성 
+          $item = $(`<li>새메뉴 ${cnt}</li>`)
+          //li 태그에 클래스가 select 인것 이전에 $item을 추가하고 있다.
+          // $item.insertBefore("#menu li.select")
+          // $("#menu li.select").before($item)
 
-          menu.appendChild($li)
-          // document.write($li.get(0))
+          $item.insertAfter('#menu li.select')
         })
       })
     </script>
